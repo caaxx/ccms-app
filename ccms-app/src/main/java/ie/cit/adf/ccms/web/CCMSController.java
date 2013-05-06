@@ -1,5 +1,8 @@
 package ie.cit.adf.ccms.web;
 
+import java.util.List;
+
+import ie.cit.adf.ccms.domain.CatalogItem;
 import ie.cit.adf.ccms.service.CMSService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,9 @@ public class CCMSController {
 	@RequestMapping("index")
 	public String listItems(Model model) {
 		
-		model.addAttribute("catalogItems", ccmsService.getAllCatalogItems());
+		List<CatalogItem> cloudCatalog = ccmsService.getAllCatalogItems();
+		
+		model.addAttribute("catalogItems", cloudCatalog);
 
 		return "CatalogView.jsp";
 	}

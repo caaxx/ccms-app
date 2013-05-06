@@ -13,7 +13,7 @@ public class FakeCloudConnectorServiceImpl implements CloudConnectorService {
 
 	@Override
 	public List<CatalogItem> getAllItems() {
-		List<CatalogItem> catalog = new ArrayList<CatalogItem>();
+		List<CatalogItem> cloudCatalog = new ArrayList<CatalogItem>();
 		
 		CatalogItem catalogItem1 = new CatalogItem("FakeCloud", "Catalog", "BaseTemplates", 
 				"BaseSingleSite v1", "ccleary", 0);
@@ -36,18 +36,18 @@ public class FakeCloudConnectorServiceImpl implements CloudConnectorService {
 		CatalogItem catalogItem10 = new CatalogItem("FakeCloud", "Demo", "GoldMasters", 
 				"HorizonWorkspace Demo v8.2", "downer", 0);
 		
-		catalog.add(catalogItem1);
-		catalog.add(catalogItem2);
-		catalog.add(catalogItem3);
-		catalog.add(catalogItem4);
-		catalog.add(catalogItem5);
-		catalog.add(catalogItem6);
-		catalog.add(catalogItem7);
-		catalog.add(catalogItem8);
-		catalog.add(catalogItem9);
-		catalog.add(catalogItem10);
+		cloudCatalog.add(catalogItem1);
+		cloudCatalog.add(catalogItem2);
+		cloudCatalog.add(catalogItem3);
+		cloudCatalog.add(catalogItem4);
+		cloudCatalog.add(catalogItem5);
+		cloudCatalog.add(catalogItem6);
+		cloudCatalog.add(catalogItem7);
+		cloudCatalog.add(catalogItem8);
+		cloudCatalog.add(catalogItem9);
+		cloudCatalog.add(catalogItem10);
 		
-		return catalog;
+		return cloudCatalog;
 	}
 
 }

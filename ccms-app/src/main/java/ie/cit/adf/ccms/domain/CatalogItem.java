@@ -29,43 +29,54 @@ public class CatalogItem {
 		this.deploycount = deployCount;
 	}
 
-	public String getCloudName() {
+	public String getCloudname() {
 		return cloudname;
 	}
-	public void setCloudName(String cloudName) {
-		this.cloudname = cloudName;
+
+	public void setCloudname(String cloudname) {
+		this.cloudname = cloudname;
 	}
-	public String getOrgName() {
+
+	public String getOrgname() {
 		return orgname;
 	}
-	public void setOrgName(String orgName) {
-		this.orgname = orgName;
+
+	public void setOrgname(String orgname) {
+		this.orgname = orgname;
 	}
-	public String getCatalogName() {
+
+	public String getCatalogname() {
 		return catalogname;
 	}
-	public void setCatalogName(String catalogName) {
-		this.catalogname = catalogName;
+
+	public void setCatalogname(String catalogname) {
+		this.catalogname = catalogname;
 	}
-	public String getvAppName() {
+
+	public String getVappname() {
 		return vappname;
 	}
-	public void setvAppName(String vAppName) {
-		this.vappname = vAppName;
+
+	public void setVappname(String vappname) {
+		this.vappname = vappname;
 	}
-	public String getItemOwner() {
+
+	public String getItemowner() {
 		return itemowner;
 	}
-	public void setItemOwner(String itemOwner) {
-		this.itemowner = itemOwner;
+
+	public void setItemowner(String itemowner) {
+		this.itemowner = itemowner;
 	}
-	public int getDeployCount() {
+
+	public int getDeploycount() {
 		return deploycount;
 	}
-	public void setDeployCount(int deployCount) {
-		this.deploycount = deployCount;
+
+	public void setDeploycount(int deploycount) {
+		this.deploycount = deploycount;
 	}
-	
+
 	
 
 }
