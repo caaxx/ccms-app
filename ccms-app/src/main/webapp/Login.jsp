@@ -8,6 +8,6 @@
 	</head>
 	<body>
 		<H1>Cloud Content Management Login</H1>
-		You are logging in to the ${cloudURI} cloud.
+		
 	</body>
 </html>

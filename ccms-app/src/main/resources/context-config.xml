@@ -3,15 +3,16 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<bean id="CloudConnectorService" class="ie.cit.adf.ccms.domain.VCDConnectionServiceImpl" />
-	<bean id="vCMSService" class="ie.cit.adf.ccms.domain.InMemoryCMSServiceImpl"
-		p:cloudURL = "https://iad.vcloudservice.vmware.com/api"
-		p:username = "admin@3513"
-		p:password = "99096Cao"
-		init-method="ConnectToCloud"
-	/> 
+	<context:annotation-config />
+	
+	<bean id="CloudConnectorService" class="ie.cit.adf.ccms.service.FakeCloudConnectorServiceImpl"
+		autowire="byType" />
+	
+	<bean id="CMSService" class="ie.cit.adf.ccms.service.CMSServiceImpl" /> 
 
 </beans>

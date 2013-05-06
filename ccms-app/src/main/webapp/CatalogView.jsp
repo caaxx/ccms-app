@@ -9,8 +9,10 @@
 </head>
 <body>
 	<h1>Content items from cloud</h1>
-	<c:forEach items="${contentItems}" var="contentItem" varStatus="row">
-		${row.count} - ${contentItem} <br>
+	<c:forEach items="${catalogItems}" var="catalogItem" varStatus="row">
+		${row.count} - ${catalogItem.cloudname} - ${catalogItem.orgname} - ${catalogItem.catalogname} - 
+			${catalogItem.vappname} - ${catalogItem.itemowner} - ${catalogItem.deploycount} <br>
 	</c:forEach>
+	
 </body>
 </html>
