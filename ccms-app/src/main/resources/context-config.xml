@@ -4,7 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
@@ -13,6 +15,23 @@
 	<bean id="CloudConnectorService" class="ie.cit.adf.ccms.service.FakeCloudConnectorServiceImpl"
 		autowire="byType" />
 	
-	<bean id="CMSService" class="ie.cit.adf.ccms.service.CMSServiceImpl" /> 
+	<bean id="jdbcCatalogItemRepository" class="ie.cit.adf.ccms.domain.dao.JdbcCatalogItemReposoitory">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:ci-db-schema.sql" />
+	</jdbc:embedded-database>
+	
+	<bean id="org.h2.tools.Server-WebServer" class="org.h2.tools.Server"
+		factory-method="createWebServer" init-method="start" lazy-init="false"
+		destroy-method="stop" depends-on="dataSource">
+		<constructor-arg value="-web,-webPort,8082" />
+	</bean>	
+
+	<bean id="CMSService" class="ie.cit.adf.ccms.service.CMSServiceImpl">
+		<constructor-arg ref="jdbcCatalogItemRepository" />
+	</bean>
+		
 
 </beans>
