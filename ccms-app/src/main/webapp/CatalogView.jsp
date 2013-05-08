@@ -9,10 +9,36 @@
 </head>
 <body>
 	<h1>Content items from cloud</h1>
-	<c:forEach items="${catalogItems}" var="catalogItem" varStatus="row">
-		${row.count} - ${catalogItem.cloudname} - ${catalogItem.orgname} - ${catalogItem.catalogname} - 
-			${catalogItem.vappname} - ${catalogItem.itemowner} - ${catalogItem.deploycount} <br>
-	</c:forEach>
+
+	<table id="CI Report">
+		<tr>
+			<th>Row</th>
+			<th>Cloud Name</th>
+			<th>Org Name</th>
+			<th>Catalog Name</th>
+			<th>vApp Name</th>
+			<th>Owner</th>
+			<th>Deploy Count</th>
+		</tr>
+		<c:forEach items="${catalogItems}" var="catalogItem" varStatus="row">
+			<tr>
+				<td>${row.count}</td>
+				<td>${catalogItem.cloudname}</td>
+				<td>${catalogItem.orgname}</td>
+				<td>${catalogItem.catalogname}</td>
+				<td>${catalogItem.vappname}</td>
+				<td>${catalogItem.itemowner}</td>
+				<td>${catalogItem.deploycount}</td> 
+				<td>
+				<form action="deploy.html" method="post">
+					<input name="vAppName" value="${catalogItem.vappname}" type="hidden">
+					<input type="submit" value="Deploy">
+				</form> 
+				</td>
+			</tr>	
+		</c:forEach>
+
+	</table>
 	
 </body>
 </html>

@@ -23,7 +23,7 @@ public class JdbcCatalogItemReposoitory implements CatalogItemRepository {
 	@Override
 	public CatalogItem findByName(String name) {
 		return jdbcTemplate.queryForObject(
-				"SELECT CLOUDNAME, ORGNAME, CATALOGNAME, VAPPNAME, ITEMOWNER, DEPLOYCOUNT FROM CATALOGITEM WHERE ID=?", ciMapper, name);
+				"SELECT CLOUDNAME, ORGNAME, CATALOGNAME, VAPPNAME, ITEMOWNER, DEPLOYCOUNT FROM CATALOGITEM WHERE VAPPNAME=?", ciMapper, name);
 	}
 
 	@Override
