@@ -2,8 +2,6 @@ package ie.cit.adf.ccms.domain;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-
-
 @XmlRootElement(name = "CatalogItem")
 public class CatalogItem {
 	

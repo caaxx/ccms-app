@@ -9,6 +9,7 @@ public interface CMSService {
 	public void SyncFromCloud(String cloudURI, String username, String password);
 	public List<CatalogItem> getAllCatalogItems();
 	public void deploy(String vAppName);
+	public CatalogItem get(String vAppName);
 	
 }
 

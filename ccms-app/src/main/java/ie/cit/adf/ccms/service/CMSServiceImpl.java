@@ -48,11 +48,21 @@ public class CMSServiceImpl implements CMSService {
 
 	@Override
 	@Transactional
-	public void deploy(String vAppName) {
-		CatalogItem ci = ciRepo.findByName(vAppName);
+	public void deploy(String vAppName) 
+			throws RuntimeException {
+		CatalogItem ci = get(vAppName);
+		if (ci == null) {
+			throw new RuntimeException();
+		}
 		int deployCount = ci.getDeploycount() + 1;
 		ci.setDeploycount(deployCount);
 		ciRepo.Update(ci);
+	}
+
+	@Override
+	public CatalogItem get(String vAppName) {
+		CatalogItem ci = ciRepo.findByName(vAppName);
+		return ci;
 	}
 
 }
