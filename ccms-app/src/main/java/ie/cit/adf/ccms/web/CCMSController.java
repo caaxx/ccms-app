@@ -16,6 +16,11 @@ public class CCMSController {
 	private CMSService ccmsService; 
 		
 	@RequestMapping("index")
+	public String index(Model model) {
+		return "index.jsp";
+	}
+	
+	@RequestMapping("CatalogView")
 	public String listItems(Model model) {
 		
 		ccmsService.SyncFromCloud("FakeCloud", "user@cloud", "Secret");

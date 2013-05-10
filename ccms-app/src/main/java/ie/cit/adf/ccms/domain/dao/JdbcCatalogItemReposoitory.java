@@ -8,9 +8,11 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.security.access.annotation.Secured;
 
 import ie.cit.adf.ccms.domain.CatalogItem;
 
+@Secured("ROLE_USER")
 public class JdbcCatalogItemReposoitory implements CatalogItemRepository {
 
 	private JdbcTemplate jdbcTemplate;
