@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Refresh" 
- content="3; URL=/ccms/CatalogView">
+ content="3; URL=CatalogView">
 <title>Cloud Catalog Management Service</title>
 </head>
 <body>
