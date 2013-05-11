@@ -29,8 +29,8 @@ public class CCMSRestController {
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Catalog catalog(@PathVariable String username, @PathVariable String password) {
-		Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
-		SecurityContextHolder.getContext().setAuthentication(auth);
+		//Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
+		//SecurityContextHolder.getContext().setAuthentication(auth);
 		return new Catalog(ccmsService.getAllCatalogItems());
 	}
 	
