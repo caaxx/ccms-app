@@ -52,5 +52,12 @@ public class CMSServiceImpl implements CMSService {
 		ci.setDeploycount(deployCount);
 		ciRepo.Update(ci);
 	}
+	
+	@Override
+	public CatalogItem get(String vAppName) {
+		CatalogItem ci = ciRepo.findByName(vAppName);
+		return ci;
+	}
+	
 
 }
