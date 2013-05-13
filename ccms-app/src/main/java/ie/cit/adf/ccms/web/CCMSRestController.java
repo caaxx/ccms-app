@@ -45,7 +45,7 @@ public class CCMSRestController {
 		return ci;
 	}
 		
-	// curl -X PUT -i http://localhost:8080/ccms/api/deploy/{vAppName}
+	// curl -X PUT -i http://localhost:8080/ccms/api/deploy/{vAppName}/{username}/{password}
 	@RequestMapping(value = "deploy/{vAppName}/{username}/{password}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void update(@PathVariable String vAppName, @PathVariable String username, @PathVariable String password) {
