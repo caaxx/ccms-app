@@ -29,8 +29,8 @@ public class CCMSRestController {
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Catalog catalog(@PathVariable String username, @PathVariable String password) {
-		//Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
-		//SecurityContextHolder.getContext().setAuthentication(auth);
+		Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
+		SecurityContextHolder.getContext().setAuthentication(auth);
 		return new Catalog(ccmsService.getAllCatalogItems());
 	}
 	
@@ -48,10 +48,12 @@ public class CCMSRestController {
 		return ci;
 	}
 		
-	// curl -X PUT -i http://localhost:8080/ccms/api/deploy/{vAppName}
+	// curl -X PUT -i http://localhost:8080/ccms/api/deploy/{vAppName}/{username}/{password}
 	@RequestMapping(value = "deploy/{vAppName}/{username}/{password}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void update(@PathVariable String vAppName, @PathVariable String username, @PathVariable String password) {
+		Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
+		SecurityContextHolder.getContext().setAuthentication(auth);
 		try {
 			ccmsService.deploy(vAppName);
 		}
