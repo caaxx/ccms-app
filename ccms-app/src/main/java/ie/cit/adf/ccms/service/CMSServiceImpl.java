@@ -41,6 +41,10 @@ public class CMSServiceImpl implements CMSService {
 		
 	}
 
+	public void setCloudConnector(CloudConnectorService cloudConnector) {
+		this.cloudConnector = cloudConnector;
+	}
+
 	@Override
 	public List<CatalogItem> getAllCatalogItems() {
 		return ciRepo.getAll(); 

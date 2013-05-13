@@ -16,7 +16,7 @@ public class FakeCloudConnectorServiceImpl implements CloudConnectorService {
 		List<CatalogItem> cloudCatalog = new ArrayList<CatalogItem>();
 		
 		CatalogItem catalogItem1 = new CatalogItem("FakeCloud", "Catalog", "BaseTemplates", 
-				"BaseSingleSite v1", "ccleary", 0);
+				"BaseSingleSite v1", "ccleary", 5);
 		CatalogItem catalogItem2 = new CatalogItem("FakeCloud", "Catalog", "BaseTemplates", 
 				"BasevCloudSite v1", "system", 0);
 		CatalogItem catalogItem3 = new CatalogItem("FakeCloud", "Catalog", "BaseTemplates", 
@@ -24,7 +24,7 @@ public class FakeCloudConnectorServiceImpl implements CloudConnectorService {
 		CatalogItem catalogItem4 = new CatalogItem("FakeCloud", "Catalog", "BaseTemplates", 
 				"SRM v1", "htester", 0);
 		CatalogItem catalogItem5 = new CatalogItem("FakeCloud", "Sandbox", "InternalCatalog", 
-				"MySamplevCloud", "jbeginner", 0);
+				"MySamplevCloud", "jbeginner", 5);
 		CatalogItem catalogItem6 = new CatalogItem("FakeCloud", "Sandbox", "InternalCatalog", 
 				"vCAC Demo", "ccleary", 0);
 		CatalogItem catalogItem7 = new CatalogItem("FakeCloud", "Sandbox", "InternalCatalog", 
