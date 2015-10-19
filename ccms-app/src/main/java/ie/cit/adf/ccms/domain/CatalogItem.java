@@ -1,21 +1,23 @@
+// This is a new package comment
+
 package ie.cit.adf.ccms.domain;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "CatalogItem")
 public class CatalogItem {
-	
+
 	private String cloudname;
 	private String orgname;
 	private String catalogname;
 	private String vappname;
 	private String itemowner;
 	private int deploycount;
-	
+
 	public CatalogItem() {
-		
+
 	}
-	
+
 	public CatalogItem(String cloudName, String orgName, String catalogName,
 			String vAppName, String itemOwner, int deployCount) {
 		super();
@@ -75,6 +77,6 @@ public class CatalogItem {
 		this.deploycount = deploycount;
 	}
 
-	
+
 
 }
